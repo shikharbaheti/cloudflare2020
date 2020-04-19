@@ -63,7 +63,3 @@ const host = 'https://cfw-takehome.developers.workers.dev'
 const url1 = host + '/api/variants'
 const url2 = host + '/api/variants'
 const type = 'application/json;charset=UTF-8'
-
-function delete_cookie(name) {
-  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-}
