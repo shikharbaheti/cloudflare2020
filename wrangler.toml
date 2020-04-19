@@ -1,5 +1,5 @@
 # wrangler.toml
-name = "cloudflare"
+name = "cloudflareinternship"
 account_id = "a0dee79409626c9979b383cd88050bc9"
 type = "javascript"
 workers_dev = true
