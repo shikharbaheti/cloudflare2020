@@ -18,3 +18,4 @@ I wish to improve my skills as a computer engineer by learning by doing and inte
 
 ## Link for the project
 The project can be found at [CloudFlare internship project](https://cloudflare.shikharbaheti.net).
+Please delete cookies if you have previously visited my site. 
