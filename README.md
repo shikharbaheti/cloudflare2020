@@ -1,7 +1,7 @@
 # About 
 Cloudflare internship project
 
-# Cloudflare Workers Internship Application: Full-Stack
+## This is my project for Cloudflare Workers' Internship Application: Full-Stack
 
 Thank you for giving me the opportunity to demonstate my full-stack development abilities.
 I have been using ***Cloudflare's*** services ever since I was in high school. I created a forum for
