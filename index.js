@@ -1,3 +1,21 @@
+class handleHTMLChanges {
+  element(element) {
+    if (element.tagName == "p") {
+      element.replace("Welcome to Shikhar Baheti's Workers' App! Please click the link below to access my personal website to know more about me!");
+    }
+    if (element.tagName == "a") {
+      element.setAttribute("href", "https://shikharbaheti.net/");
+      element.setAttribute("target", "_blank")
+      element.setInnerContent("Shikhar's Personal website");
+    }
+    if (element.tagName == "title") {
+      element.prepend("Welcome to ");
+    }
+    if (element.tagName == "h1") {
+      element.prepend("This is ");
+    }
+  }
+}
 async function handleRequest(request) {
   const init = {
     headers: {
@@ -29,17 +47,20 @@ async function handleRequest(request) {
     let group = Math.random() < 0.5 ? 'var1' : 'var2'
     let response = group === 'var1' ? VAR1 : VAR2
     response.headers.append('Set-Cookie', `${NAME}=${group}; path=/`)
-    return response
+    return REWRITER.transform(response);
   }
 }
+
+const REWRITER = new HTMLRewriter().on('p#description', new handleHTMLChanges()).on('a#url', new handleHTMLChanges()).on('title', new handleHTMLChanges()).on('head', new handleHTMLChanges()).on('h1#title', new handleHTMLChanges());
+
 addEventListener('fetch', event => {
   return event.respondWith(handleRequest(event.request))
 })
 /**
- * gatherResponse awaits and returns a response body as a string.
- * Use await gatherResponse(..) in an async function to get the response body
- * @param {Response} response
- */
+* gatherResponse awaits and returns a response body as a string.
+* Use await gatherResponse(..) in an async function to get the response body
+* @param {Response} response
+*/
 async function gatherResponse(response) {
   const { headers } = response
   const contentType = headers.get('content-type')
@@ -54,11 +75,11 @@ async function gatherResponse(response) {
   }
 }
 /**
- * Example someHost is set up to return JSON responses
- * Replace url1 and url2  with the hosts you wish to
- * send requests to
- * @param {string} url the URL to send the request to
- */
+* Example someHost is set up to return JSON responses
+* Replace url1 and url2  with the hosts you wish to
+* send requests to
+* @param {string} url the URL to send the request to
+*/
 const host = 'https://cfw-takehome.developers.workers.dev'
 const url1 = host + '/api/variants'
 const url2 = host + '/api/variants'
