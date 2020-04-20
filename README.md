@@ -17,5 +17,5 @@ It would be an honor and a privilege to intern at a company whose services I hav
 I wish to improve my skills as a computer engineer by learning by doing and interning at CloudFlare this summer will enable me to do so.
 
 ## Link for the project
-The project can be found at [CloudFlare internship project](https://cloudflare.shikharbaheti.net).
+The project can be found at [CloudFlare internship project](https://cloudflare.shikharbaheti.net). \
 Please delete cookies if you have previously visited my site. 
