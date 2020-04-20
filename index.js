@@ -61,10 +61,10 @@ async function handleRequest(request) {
 
   // if the cookie is already present with variant 1, present it. 
   if (cookie && cookie.includes(`${NAME}=var1`)) {
-    return VARIANT1
+    return REWRITER.transform(VARIANT1);
     //otherwise, present variant 2. 
   } else if (cookie && cookie.includes(`${NAME}=var2`)) {
-    return VARIANT2
+    return REWRITER.transform(VARIANT2);
   } // if first time visiting my web-page, create a new cookie with 50/50 change of hitting one of the variants. 
   else {
     let group = Math.random() < 0.5 ? 'var1' : 'var2'

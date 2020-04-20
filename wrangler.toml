@@ -1,10 +1,13 @@
-# wrangler.toml
 name = "cloudflareinternship"
 account_id = "a0dee79409626c9979b383cd88050bc9"
 type = "javascript"
-workers_dev = true
-[env.production]
+workers_dev = false
 # The ID of your domain you're deploying to
 zone_id = "33896fa36ea43e38e2d1c16aff6dc143"
 # The route pattern your Workers application will be served at
 route = "cloudflare.shikharbaheti.net"
+#[env.production]
+# The ID of your domain you're deploying to
+#zone_id = "33896fa36ea43e38e2d1c16aff6dc143"
+# The route pattern your Workers application will be served at
+#route = "cloudflare.shikharbaheti.net"
